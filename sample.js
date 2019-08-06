@@ -13,11 +13,12 @@ $(document).ready(function () {
     ];
 
     // さらにこのような記述をすることで、「合計点：」となっている右の部分に合計点が出力される
-    let sum = subject_points[0];
-    sum = sum + subject_points[1];
-    sum = sum + subject_points[2];
-    sum = sum + subject_points[3];
-    sum = sum + subject_points[4];
+    const sum = subject_points.reduce((accumulator, currentValue) => accumulator + currentValue);  // 追加要素1
+    // let sum = subject_points[0];
+    // sum = sum + subject_points[1];
+    // sum = sum + subject_points[2];
+    // sum = sum + subject_points[3];
+    // sum = sum + subject_points[4];
     $("#sum_indicate").text(sum);
 
     // ここに、上記を参考にして平均点を出力する処理を書き込む
@@ -57,7 +58,7 @@ $(document).ready(function () {
     // 下記の記述をすることで、「最終ジャッジ」のボタンを押すと「あなたの成績は（ここに「ランク」の値を入れる）です。（ここに「判定」の値を入れる）です」という文字の入った水色のフキダシが出力される処理が実装される。
     const achievement = get_achievement();
     const pass_or_failure = get_pass_or_failure();
-    
+
     $('#declaration').append(
       `<label id="alert-indicate" class="alert alert-info">
         あなたの成績は${achievement}です。${pass_or_failure}です。

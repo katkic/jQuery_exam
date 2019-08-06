@@ -1,6 +1,7 @@
 $(document).ready(function () {
   let subject_points = [0, 0, 0, 0, 0];
   let average;
+  
   function score_indicate() {
     // このような記述をすることで、subject_pointsという変数の中に
     // [国語の点数,英語の点数,数学の点数,理科の点数,社会の点数]という配列を作成できる。

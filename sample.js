@@ -41,6 +41,15 @@ $(document).ready(function () {
 
   function get_pass_or_failure() {
     // ここに、全ての教科が60点以上なら"合格"の文字列、一つでも60点未満の教科があったら"不合格"の文字列を出す処理を書き込む
+    let judge = '合格';
+    for (const score of subject_points) {
+      if (score < 60) {
+        judge = '不合格';
+        break;
+      }
+    }
+    $('#judge').text(judge);
+    return judge;
   }
 
   function judgement() {

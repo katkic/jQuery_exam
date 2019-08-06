@@ -59,6 +59,9 @@ $(document).ready(function () {
     const achievement = get_achievement();
     const pass_or_failure = get_pass_or_failure();
 
+    if ($('#alert-indicate').length) {  // 追加課題2
+      $('#alert-indicate').remove();
+    }
     $('#declaration').append(
       `<label id="alert-indicate" class="alert alert-info">
         あなたの成績は${achievement}です。${pass_or_failure}です。
